@@ -104,6 +104,50 @@ function viewDepartments() {
         });
     };
     
+    function addDepartment() {
+        inquirer
+            .prompt({
+                name: "department",
+                type: "input",
+                message: "What is the name of the new department?",
+              })
+            .then(function(answer) {
+            var query = "INSERT INTO department (name) VALUES ( ? )";
+            connection.query(query, answer.department, function(err, res) {
+                console.log(`You have added this department: ${(answer.department).toUpperCase()}.`)
+            })
+            viewDepartments();
+            })
+        }
+        
+        function addRole() {
+        connection.query('SELECT * FROM department', function(err, res) {
+            if (err) throw (err);
+        inquirer
+            .prompt([{
+                name: "title",
+                type: "input",
+                message: "What is the title of the new role?",
+              }, 
+              {
+                name: "salary",
+                type: "input",
+                message: "What is the salary of the new role?",
+              },
+              {
+                name: "departmentName",
+                type: "list",
+                message: "Which department does this role fall under?",
+                choices: function() {
+                    var choicesArray = [];
+                    res.forEach(res => {
+                        choicesArray.push(
+                            res.name
+                        );
+                    })
+                    return choicesArray;
+                  }
+              }
+              ]) 
     }
     
-      
