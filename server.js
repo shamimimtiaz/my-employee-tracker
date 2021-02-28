@@ -1,5 +1,6 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
+//Create connection with mysql database
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -11,6 +12,7 @@ const connection = mysql.createConnection({
     if (err) throw err;
     start();
   });
+ // Display logo text, load main  
   console.log(`╔═════════════════════════════════════════════════════╗
 ║                                                     ║
 ║     _____                 _                         ║
@@ -29,7 +31,7 @@ const connection = mysql.createConnection({
 ║                                                     ║
 \╚═════════════════════════════════════════════════════╝
 `);
-
+//// Call the appropriate function depending on what the user choose
   function start() {
     inquirer
       .prompt({
@@ -48,6 +50,26 @@ const connection = mysql.createConnection({
         ]
       })
     
-
+      .then(function(answer) {
+        if (answer.action === 'View all departments') {
+            viewDepartments();
+        } else if (answer.action === 'View all roles') {
+            viewRoles();
+        } else if (answer.action === 'View all employees') {
+            viewEmployees();
+        } else if (answer.action === 'Add a department') {
+            addDepartment();
+        } else if (answer.action === 'Add a role') {
+            addRole();
+        } else if (answer.action === 'Add an employee') {
+            addEmployee();
+        } else if (answer.action === 'Update employee role') {
+            updateRole();
+        }
+        else if (answer.action === 'Exit') {
+            connection.end();
+        }
+    })
     }
+    
       

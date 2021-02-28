@@ -1,12 +1,12 @@
 CREATE DATABASE employee_db;
 
 USE employee_db;
-
+-- Create department table
 CREATE TABLE department (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     name VARCHAR(30) NOT NULL, 
 );
-
+-- Create table for role
 CREATE TABLE role (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) UNIQUE NOT NULL, 
@@ -15,6 +15,7 @@ CREATE TABLE role (
     CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
 );
 
+-- Create employee table
 CREATE TABLE employee (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
     first_name VARCHAR(30) NOT NULL, 
