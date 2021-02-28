@@ -1,21 +1,22 @@
 USE employee_db;
 
 -- Data for department table
-INSERT INTO department (name) VALUES ("Engineering");
-INSERT INTO department (name) VALUES ("Finance");
+INSERT INTO department (name) VALUES ("Human Resources");
+INSERT INTO department (name) VALUES ("Marketing");
 INSERT INTO department (name) VALUES ("Information Technology");
-INSERT INTO department (name) VALUES ("HR and Recruiting");
+INSERT INTO department (name) VALUES ("Corporate");
 
 -- Data for role table
-INSERT INTO role (title, salary, department_id) VALUES ("Engineer", 70, 3);
-INSERT INTO role (title, salary, department_id) VALUES ("HR Associate", 50, 2);
-INSERT INTO role (title, salary, department_id) VALUES ("Finance Manager", 50, 2);
-INSERT INTO role (title, salary, department_id) VALUES ("IT Director", 90, 1);
-INSERT INTO role (title, salary, department_id) VALUES ("Operation Director", 100, 4);
+INSERT INTO role (title, salary, department_id) VALUES ("Analyst", 70, 3);
+INSERT INTO role (title, salary, department_id) VALUES ("Communications Associate", 50, 2);
+INSERT INTO role (title, salary, department_id) VALUES ("Social Media Manager", 50, 2);
+INSERT INTO role (title, salary, department_id) VALUES ("Director", 100, 1);
+INSERT INTO role (title, salary, department_id) VALUES ("Director", 100, 4);
+
 
 -- Data for employee table
-INSERT INTO employee (first_name, last_name, role_id) VALUES ("Shamim", "Imtiaz", 2);
-INSERT INTO employee (first_name, last_name, role_id) VALUES ("Chris", "Whiteman", 1);
-INSERT INTO employee (first_name, last_name, role_id) VALUES ("Ariel", "Hernandez", 3);
-INSERT INTO employee (first_name, last_name, role_id) VALUES ("Tim", "Squirm", 4);
-INSERT INTO employee (first_name, last_name, role_id) VALUES ("Eric", "Denosa", 5);
+NSERT INTO employee (first_name, last_name, role_id) VALUES ("David", "Jester", 2);
+INSERT INTO employee (first_name, last_name, role_id) VALUES ("Abby", "Whiteman", 1);
+INSERT INTO employee (first_name, last_name, role_id) VALUES ("Katie", "Pieto", 3);
+INSERT INTO employee (first_name, last_name, role_id) VALUES ("Rachael", "Squirm", 4);
+INSERT INTO employee (first_name, last_name, role_id) VALUES ("Lizzie", "Halep", 5);
