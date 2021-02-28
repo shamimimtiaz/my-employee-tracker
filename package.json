@@ -1,0 +1,26 @@
+{
+  "name": "my-employee-tracker",
+  "version": "1.0.0",
+  "description": "employee tracker app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamimimtiaz/my-employee-tracker.git"
+  },
+  "author": "shamim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamimimtiaz/my-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/shamimimtiaz/my-employee-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.0.0",
+    "migrate": "^1.7.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
+  }
+}
